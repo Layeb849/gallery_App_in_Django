@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">Albums</h2>
+    <div class="row">
+        {% for album in albums %}
+        <div class="col-md-4">
+            <div class="card shadow-lg p-3 mb-4 bg-white rounded">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{ album.name }}</h5>
+                    <a href="{% url 'album_detail' album.id %}" class="btn btn-primary">View Album</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>No albums found!</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
