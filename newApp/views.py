@@ -70,4 +70,4 @@ def edit_album(request, album_id):
 def delete_album(request, album_id):
     album = get_object_or_404(Album, id=album_id)
     album.delete()
-    return redirect('album_list') 
+    return redirect('album_list')  
