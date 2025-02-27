@@ -49,6 +49,7 @@ def delete_image(request, photo_id):
     photo.delete()  
     return redirect('album_list') 
 
+
 def edit_album(request, album_id):
     albums = get_object_or_404(Album, id=album_id)  # This ensures the album exists
 
