@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from newApp.views import album_list, album_detail, upload_photo,home, delete_image
+from newApp.views import album_list, album_detail, upload_photo,home, delete_image, edit_album,delete_album
 from newProject import settings
 from django.conf.urls.static import static
 
@@ -28,6 +28,8 @@ urlpatterns = [
     path('album/<int:album_id>/', album_detail, name='album_detail'),
     path('album/<int:album_id>/upload/', upload_photo, name='upload_photo'),
     path('delete_image/<int:photo_id>/', delete_image, name='delete_image'),    
+    path('edit_album/<int:album_id>/', edit_album, name='edit_album'),
+     path('delete_album/<int:album_id>/', delete_album, name='delete_album'), 
 ]
 
 if settings.DEBUG:

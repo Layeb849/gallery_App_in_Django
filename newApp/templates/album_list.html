@@ -9,7 +9,6 @@
 <body>
     <div class="container mt-5">
         <h2 class="text-center">Albums</h2>
-
         <div class="card p-4 my-4 shadow-sm">
             <h4>Create New Album</h4>
             <form method="POST">
@@ -28,24 +27,25 @@
 
 <div class="row">
     {% for album in albums %}
-    <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
+    <div class="col-md-2">
+        <div class="card mb-4 shadow-sm pb-2">
             <div class="card-body">
-                <h5 class="card-title">
+                <h5 class="card-title text-center">
                     <a href="{% url 'album_detail' album.id %}" class="text-decoration-none">
                         {{ album.name }}
                     </a>
-                </h5>
-                <p class="card-text">{{ album.description }}</p>
+                </h5 class="text text-center">
+                <p class="card-text text-center">{{ album.description }}</p>
+            </div>
+            <div class="d-flex justify-content-around">
+                <a href="{% url 'delete_album' album.id %}" class="btn btn-danger btn-sm">Delete</a>
+                <a href="{% url 'edit_album' album.id %}" class="btn btn-primary btn-sm">Edit</a>
             </div>
         </div>
     </div>
     {% empty %}
     <p>No albums found. Create a new one!</p>
     {% endfor %}
-</div>
-
-
-    
+</div>   
 </body>
 </html>

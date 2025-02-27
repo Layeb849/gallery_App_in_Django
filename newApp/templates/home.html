@@ -35,7 +35,7 @@
                             <!-- Delete Button -->
                             <form action="{% url 'delete_image' photo.id %}" method="POST" style="display:inline;">
                                 {% csrf_token %}
-                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                <a href="{% url 'delete_image' photo.id %}" type="submit" class="btn btn-danger btn-sm">Delete</a>
                             </form>
                         </div>
                     </div>
